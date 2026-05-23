@@ -43,6 +43,31 @@
 
     <div class="card">
       <h2 class="card-title">How Dungeon Exploration Works</h2>
+      <div class="tool-tips">
+        <p style="margin-bottom:0.75rem;">The draft rules have a flow chart and rules that show how to generate each area (see the draft rules PDF pinned to the #solo-rules channel of the <a href="https://discord.com/invite/7xKRkHfDks" target="_blank">Nimble Discord server</a> for the illustrated decision flows). The text is displayed below for reference. However, the generator above automates the entire flow. Keep hitting the Explore Next Area button above, and adjudicate as you go.</p>
+        <ul>
+          <li><strong>Chambers:</strong> Draw on your map and then adjudicate per the room type.
+            <ul>
+              <li><strong>Hazard:</strong> Can be flavor for the room or inspire a challenge (see Creating a Challenge rules below).</li>
+              <li><strong>Encounter:</strong> Use the <strong>Monster Encounter</strong> tools in the sidebar for random encounter ideas.</li>
+              <li><strong>Treasure:</strong> Use the <strong>Treasure</strong> tool in the sidebar when you find loot or make something flavorful up.</li>
+              <li><strong>Locked Door:</strong> Use a key or create a challenge to pick the lock, break the door down, or explore another solution. Or mark as locked on your map and explore a different direction.</li>
+              <li><strong>Safety:</strong> Indicate on your map that the room can be used to rest without rolling to Linger longer.</li>
+              <li><strong>Immersion:</strong> Imagine the sensations your character is experiencing.</li>
+              <li><strong>Key:</strong> Add to your inventory (see key rules below).</li>
+              <li><strong>Trap:</strong> You see the trap. Create a challenge to disarm or trigger the trap (see Creating a Challenge rules below). Or mark the trap on your map and explore a different direction.</li>
+              <li><strong>Challenge:</strong> The generator automatically creates one. Adjudicate per the Creating a Challenge rules below.</li>
+              <li><strong>Objective:</strong> You found what you were questing for. Continue exploring or start backtracking your way out of the dungeon using your map and the Backtrack button.</li>
+            </ul>
+          </li>
+          <li><strong>Passage/Secret Exit/Stairs/Connection to Previous Area:</strong> Draw on your map.</li>
+          <li>Use the <strong>Linger</strong> or <strong>Backtrack</strong> buttons to determine if you get an encounter by hanging around in unsafe rooms or backtracking through previously explored ones. If you get one, use the <strong>Monster Encounter</strong> tools in the sidebar for random encounter ideas.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Dungeon Exploration Rules</h2>
       <div class="nimble-rules">
         <p>Generate a map as you, exploring one area at a time. Start at the Early Phase.</p>
         <ul>
@@ -57,12 +82,6 @@
           <li><strong>Objective:</strong> Only one objective per map. If not rolled, the last reachable area is the objective.</li>
           <li><strong>Keys:</strong> One use only. Can unlock any door.</li>
           <li><strong>Traps:</strong> You see the trap. Disarm, trigger, or turn around and find another way.</li>
-        </ul>
-      </div>
-      <div class="tool-tips">
-        <ul>
-          <li><strong>Monster Encounters:</strong> Use the <strong>Monster Encounter</strong> tools in the sidebar when the generator calls for combat.</li>
-          <li><strong>Treasure:</strong> Use the <strong>Treasure</strong> tool in the sidebar when you find loot.</li>
         </ul>
       </div>
     </div>
@@ -86,28 +105,6 @@
       <div class="nimble-rules">
         <p style="margin-bottom:0.75rem;">You <strong>[Sense]</strong> something <strong>[Description]</strong> <strong>[Location]</strong> and it causes <strong>[Emotion]</strong> because <strong>[Reason]</strong>.</p>
         <p>Imagine the sensations your character is experiencing. Exploration Encounters will prompt you to roll on this table.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <h2 class="card-title">Dungeon Exploration Flow</h2>
-      <p style="color:var(--text-tertiary); font-size:0.85rem; margin-bottom:1rem;">This diagram shows the exploration loop the generator automates.</p>
-      <div class="flow-diagram">
-        <div class="flow-node" style="background:var(--color-dungeon); color:#fff;">Enter the Dungeon</div>
-        <div class="flow-arrow"></div>
-        <div class="flow-node" style="background:var(--color-dungeon); color:#fff;">Roll Exploration Dice (2d6)</div>
-        <div class="flow-arrow"></div>
-        <div class="flow-node info">Determine Room Type<br><span style="font-size:0.75rem; font-weight:400;">Empty / Feature / Challenge / Monster / Treasure / Objective</span></div>
-        <div class="flow-arrow"></div>
-        <div class="flow-node info">Resolve the Room<br><span style="font-size:0.75rem; font-weight:400;">Fight, loot, solve, or explore</span></div>
-        <div class="flow-arrow"></div>
-        <div class="flow-node info">Determine Exits<br><span style="font-size:0.75rem; font-weight:400;">Passages, doors (locked? trapped?), dead ends</span></div>
-        <div class="flow-arrow"></div>
-        <div class="flow-node info">Check Phase & Objective<br><span style="font-size:0.75rem; font-weight:400;">Early → Late transition, objective availability</span></div>
-        <div class="flow-arrow"></div>
-        <div class="flow-node" style="background:var(--color-dungeon); color:#fff;">Choose an Exit — Continue</div>
-        <div class="flow-arrow"></div>
-        <div class="flow-loop-label">Loop until Objective Complete</div>
       </div>
     </div>
 

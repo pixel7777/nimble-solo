@@ -3,6 +3,8 @@ function buildSidebar() {
     { name: 'Oracle & Inspiration', icon: '✨', src: 'https://null.perchance.org/nimble-oracle-basic' },
     { name: 'NPC Dialogue', icon: '🗣️', src: 'https://null.perchance.org/nimble-npc-dialogues' },
     { name: 'Name Generator', icon: '📛', src: 'https://null.perchance.org/nimble-names' },
+    { name: 'Random Event', icon: '🎭', src: 'https://null.perchance.org/nimble-random-events' },
+    { name: 'Consequence', icon: '⚡', src: 'https://null.perchance.org/nimble-consequences' },
     { name: 'Monster Encounter (Nimble)', icon: '⚔️', src: 'https://null.perchance.org/nimble-monster-encounters' },
     { name: 'Monster Encounter (Pixel)', icon: '💠', src: 'https://null.perchance.org/nimbleesque-monster-encounters' },
     { name: 'Treasure', icon: '💎', src: 'https://null.perchance.org/nimblesque-treasures' },
@@ -11,18 +13,17 @@ function buildSidebar() {
 
   const luckTableHTML = `
     <div class="luck-table">
-      <p><strong>Luck Points</strong> can be spent during play to influence outcomes.</p>
+      <p>+1 Luck on a miss or failed save. Max 5. Earning a 6th resets to 1d4. Reset to 0 on rest.</p>
       <table>
-        <thead><tr><th>Spend</th><th>Effect</th></tr></thead>
+        <thead><tr><th>Cost</th><th>Effect</th></tr></thead>
         <tbody>
-          <tr><td>1 Luck</td><td>Reroll any single die</td></tr>
-          <tr><td>1 Luck</td><td>Add or remove a detail from the scene</td></tr>
-          <tr><td>2 Luck</td><td>Auto-succeed a check (no roll needed)</td></tr>
-          <tr><td>2 Luck</td><td>Escape a deadly situation</td></tr>
-          <tr><td>3 Luck</td><td>Introduce a major narrative twist in your favor</td></tr>
+          <tr><td>1</td><td>Companion: +1 Extra Action</td></tr>
+          <tr><td>2</td><td>Hero: +1 Extra Action</td></tr>
+          <tr><td>3</td><td>Reroll any d20</td></tr>
+          <tr><td>4</td><td>Turn any hit into a crit</td></tr>
+          <tr><td>5</td><td>Recover 1 Hit Die</td></tr>
         </tbody>
       </table>
-      <p style="margin-top:0.5rem; font-size:0.8rem; color:var(--text-tertiary);">Characters start with 3 Luck. Gain 1 Luck when you roll doubles on exploration.</p>
     </div>`;
 
   let html = '<div class="sidebar-title">Toolkit</div>';
