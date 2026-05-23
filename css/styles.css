@@ -508,7 +508,85 @@ a:hover { color: var(--accent-nav-hover); text-decoration: underline; }
   height: auto;
 }
 
-/* ── RULES REFERENCE ── */
+/* ── CONTENT TYPE: NIMBLE DRAFT RULES ── */
+.nimble-rules {
+  border-left: 3px solid var(--color-settlement);
+  padding-left: 1.2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.nimble-rules::before {
+  content: 'NIMBLE SOLO DRAFT RULES';
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-settlement);
+  margin-bottom: 0.5rem;
+  opacity: 0.85;
+}
+
+.nimble-rules h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.nimble-rules p, .nimble-rules li {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.4rem;
+}
+
+.nimble-rules ul {
+  padding-left: 1.3rem;
+}
+
+/* ── CONTENT TYPE: TOOL TIPS (Pixel's guidance) ── */
+.tool-tips {
+  border-left: 3px solid var(--accent-nav);
+  padding-left: 1.2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.tool-tips::before {
+  content: 'HOW TO USE';
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-nav);
+  margin-bottom: 0.5rem;
+  opacity: 0.85;
+}
+
+.tool-tips h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.tool-tips p, .tool-tips li {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.4rem;
+}
+
+.tool-tips ul {
+  padding-left: 1.3rem;
+}
+
+/* ── LEGACY (keep for any unstyled sections) ── */
 .rules-section {
   margin-bottom: 1.5rem;
 }
