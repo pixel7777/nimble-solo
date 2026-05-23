@@ -773,13 +773,23 @@ a:hover { color: var(--accent-nav-hover); text-decoration: underline; }
   .page-content {
     padding: 1.5rem 1rem;
   }
-}
 
-@media (max-width: 650px) {
   .header-top {
     flex-wrap: wrap;
   }
 
+  .flow-nav {
+    flex: none;
+    width: 100%;
+    order: 10;
+  }
+
+  .flow-nav-inner {
+    padding: 0.3rem 0.75rem;
+  }
+}
+
+@media (max-width: 650px) {
   .util-nav {
     display: none;
     width: 100%;
@@ -796,19 +806,23 @@ a:hover { color: var(--accent-nav-hover); text-decoration: underline; }
     display: block;
   }
 
-  .flow-nav-inner {
-    padding: 0.4rem 0.75rem;
-    justify-content: flex-start;
+  .flow-nav-node.dead {
+    display: none;
+  }
+
+  .flow-nav-node.dead + .flow-nav-arrow,
+  .flow-nav-arrow:has(+ .flow-nav-node.dead) {
+    display: none;
   }
 
   .flow-nav-node {
-    font-size: 0.6rem;
-    padding: 0.2rem 0.4rem;
+    font-size: 0.72rem;
+    padding: 0.3rem 0.65rem;
   }
 
   .flow-nav-arrow {
     font-size: 0.5rem;
-    padding: 0 0.15rem;
+    padding: 0 0.2rem;
   }
 
   .brand-title {
