@@ -50,9 +50,18 @@ function buildAttribution() {
   return `This tool is free to use for anyone who already owns the content, is trying the system out, or cannot afford to buy it right now. If you enjoy Nimble and are able, please support the game by purchasing the official content at <a href="http://nimblerpg.com/" target="_blank">nimbleRPG.com</a>.`;
 }
 
+function buildFlowNav() {
+  const a = '<span class="flow-nav-arrow">▶</span>';
+  return `
+    <span class="flow-nav-node dead info-node">Create Characters</span>${a}<a href="settlement.html" class="flow-nav-node clickable settlement-node">Settlement</a>${a}<a href="quest.html" class="flow-nav-node clickable quest-node">Quest</a>${a}<a href="wilderness.html" class="flow-nav-node clickable wilderness-node">Wilderness</a>${a}<a href="dungeon.html" class="flow-nav-node clickable dungeon-node">Dungeon</a>${a}<span class="flow-nav-node dead info-node">Complete Objective</span>${a}<span class="flow-nav-node dead return-node">Return to Settlement</span>`;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const sidebarEl = document.getElementById('sidebar-mount');
   if (sidebarEl) sidebarEl.innerHTML = buildSidebar();
+
+  const flowNavEl = document.getElementById('flow-nav-mount');
+  if (flowNavEl) flowNavEl.innerHTML = buildFlowNav();
 
   document.querySelectorAll('.attribution-bar').forEach(el => {
     if (!el.innerHTML.trim()) el.innerHTML = buildAttribution();
