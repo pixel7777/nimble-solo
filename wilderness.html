@@ -44,23 +44,15 @@
     <div class="card">
       <h2 class="card-title">How Wilderness Exploration Works</h2>
       <div class="nimble-rules">
-        <p>Wilderness exploration has two phases: <strong>Early</strong> and <strong>Late</strong>. You start in the Early phase and transition to Late after you've traveled far enough (or when the generator tells you).</p>
-
-        <h3>The Exploration Loop</h3>
-        <p>Each step through the wilderness, the generator rolls for what you encounter:</p>
+        <p>Generate a map one area at a time. Start at the Early Phase.</p>
         <ul>
-          <li><strong>Travel</strong> — uneventful progress toward your destination</li>
-          <li><strong>Feature</strong> — a point of interest (landmark, ruin, natural wonder)</li>
-          <li><strong>Challenge</strong> — a skill test or obstacle to overcome</li>
-          <li><strong>Encounter</strong> — monsters or NPCs to interact with</li>
-          <li><strong>Settlement</strong> — a town or camp along the way</li>
-          <li><strong>Dungeon Found</strong> — you've arrived at your quest destination</li>
-        </ul>
-
-        <h3>Key Rules</h3>
-        <ul>
-          <li><strong>Doubles:</strong> Rolling doubles on the exploration dice triggers a special event and grants <strong>1 Luck point</strong>.</li>
-          <li><strong>Weather:</strong> Changes periodically and can affect travel. Narrate it for atmosphere.</li>
+          <li><strong>Initial Area:</strong> Roll Description. Environment is Grassland. Place a Settlement here.</li>
+          <li><strong>Next Area:</strong> Roll 2d10: One for Description and one for Next Environment.</li>
+          <li><strong>Doubles on Next Area:</strong> Transition from Early Phase to Late Phase.</li>
+          <li><strong>Early Phase:</strong> Roll 2d10-take-lowest on Encounter.</li>
+          <li><strong>Late Phase:</strong> Roll 2d10-take-highest on Encounter.</li>
+          <li><strong>Doubles on Encounter:</strong> Incorporate a Random Event.</li>
+          <li><strong>Weather:</strong> Roll 1d4 + Modifier (of Current Environment).</li>
         </ul>
       </div>
       <div class="tool-tips">
