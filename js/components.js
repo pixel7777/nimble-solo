@@ -1,11 +1,11 @@
 function buildSidebar() {
   const tools = [
-    { name: 'Oracle & Inspiration', icon: '✨', src: 'https://perchance.org/embed/nimble-oracle-basic' },
-    { name: 'NPC Dialogue', icon: '🗣️', src: 'https://perchance.org/embed/nimble-npc-dialogues' },
-    { name: 'Name Generator', icon: '📛', src: 'https://perchance.org/embed/nimble-names' },
-    { name: 'Monster Encounter (Nimble)', icon: '⚔️', src: 'https://perchance.org/embed/nimble-monster-encounters' },
-    { name: 'Monster Encounter (Pixel)', icon: '💠', src: 'https://perchance.org/embed/nimbleesque-monster-encounters' },
-    { name: 'Treasure', icon: '💎', src: 'https://perchance.org/embed/nimblesque-treasures' },
+    { name: 'Oracle & Inspiration', icon: '✨', src: 'https://perchance.org/nimble-oracle-basic' },
+    { name: 'NPC Dialogue', icon: '🗣️', src: 'https://perchance.org/nimble-npc-dialogues' },
+    { name: 'Name Generator', icon: '📛', src: 'https://perchance.org/nimble-names' },
+    { name: 'Monster Encounter (Nimble)', icon: '⚔️', src: 'https://perchance.org/nimble-monster-encounters' },
+    { name: 'Monster Encounter (Pixel)', icon: '💠', src: 'https://perchance.org/nimbleesque-monster-encounters' },
+    { name: 'Treasure', icon: '💎', src: 'https://perchance.org/nimblesque-treasures' },
     { name: 'Luck Table', icon: '🎲', src: null }
   ];
 
