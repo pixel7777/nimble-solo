@@ -67,7 +67,6 @@ a:hover { color: var(--accent-nav-hover); text-decoration: underline; }
   padding: 0.6rem 1.5rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 1rem;
 }
 
@@ -131,14 +130,12 @@ a:hover { color: var(--accent-nav-hover); text-decoration: underline; }
 
 /* ── FLOW NAV (gameplay loop) ── */
 .flow-nav {
-  background: rgba(0,0,0,0.15);
-  border-top: 1px solid rgba(255,255,255,0.08);
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .flow-nav-inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0.45rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
