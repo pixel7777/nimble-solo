@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dungeon — Nimble Solo Companion</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-title">Nimble Solo</div>
+      <div class="brand-subtitle">Solo Play Companion</div>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="settlement.html">Settlement</a>
+      <a href="quest.html">Quest</a>
+      <a href="wilderness.html">Wilderness</a>
+      <a href="dungeon.html">Dungeon</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<div class="attribution-bar"></div>
+
+<div class="page-layout">
+  <main class="page-content">
+
+    <h1 class="page-title" style="color:var(--color-dungeon);">Dungeon Exploration</h1>
+    <p class="page-subtitle">You've found the dungeon. Explore rooms, face monsters, find treasure, and complete your objective.</p>
+
+    <div class="generator-embed">
+      <div class="generator-embed-header">
+        <span class="generator-embed-title">Dungeon Explorer</span>
+        <a href="https://perchance.org/nimble-dungeon-exploration" target="_blank" class="generator-embed-link">Open standalone ↗</a>
+      </div>
+      <iframe src="https://perchance.org/embed/nimble-dungeon-exploration" title="Dungeon Explorer" loading="lazy"></iframe>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">How Dungeon Exploration Works</h2>
+      <div class="rules-section">
+        <p>Like the wilderness, dungeon exploration has <strong>Early</strong> and <strong>Late</strong> phases. You explore rooms one at a time until you find and complete your quest objective.</p>
+
+        <h3>Room Types</h3>
+        <ul>
+          <li><strong>Empty Room</strong> — nothing immediately dangerous, but might contain clues or atmosphere</li>
+          <li><strong>Feature Room</strong> — a notable dungeon feature (altar, fountain, collapsed section, etc.)</li>
+          <li><strong>Challenge Room</strong> — a skill test, puzzle, or trap to overcome</li>
+          <li><strong>Monster Room</strong> — creatures to fight or negotiate with</li>
+          <li><strong>Treasure Room</strong> — loot! Use the Treasure tool in the sidebar</li>
+          <li><strong>Objective Room</strong> — your quest target is here. Complete it to finish the dungeon.</li>
+        </ul>
+
+        <h3>Passages and Doors</h3>
+        <ul>
+          <li>After each room, the generator determines how many <strong>exits</strong> you find — passages, doors, or dead ends.</li>
+          <li><strong>Locked doors</strong> require a key (found elsewhere in the dungeon) or a skill check to force open.</li>
+          <li><strong>Trapped doors</strong> can hurt you if you don't detect and disarm them first.</li>
+        </ul>
+
+        <h3>Key Rules</h3>
+        <ul>
+          <li><strong>Doubles:</strong> Same as wilderness — special event + 1 Luck point.</li>
+          <li><strong>Lingering:</strong> If you spend too long in an area you've already explored, you risk a lingering encounter.</li>
+          <li><strong>Backtracking:</strong> Returning through cleared rooms is safe, but lingering encounter rules still apply.</li>
+          <li><strong>Monster Encounters:</strong> Use the <strong>Monster Encounter</strong> tools in the sidebar when the generator calls for combat.</li>
+          <li><strong>Objective:</strong> Completing the objective in the Late phase means you can leave the dungeon and return to your settlement.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Dungeon Exploration Flow</h2>
+      <p style="color:var(--text-tertiary); font-size:0.85rem; margin-bottom:1rem;">This diagram shows the exploration loop the generator automates.</p>
+      <div class="flow-diagram">
+        <div class="flow-node" style="background:var(--color-dungeon); color:#fff;">Enter the Dungeon</div>
+        <div class="flow-arrow"></div>
+        <div class="flow-node" style="background:var(--color-dungeon); color:#fff;">Roll Exploration Dice (2d6)</div>
+        <div class="flow-arrow"></div>
+        <div class="flow-node info">Determine Room Type<br><span style="font-size:0.75rem; font-weight:400;">Empty / Feature / Challenge / Monster / Treasure / Objective</span></div>
+        <div class="flow-arrow"></div>
+        <div class="flow-node info">Resolve the Room<br><span style="font-size:0.75rem; font-weight:400;">Fight, loot, solve, or explore</span></div>
+        <div class="flow-arrow"></div>
+        <div class="flow-node info">Determine Exits<br><span style="font-size:0.75rem; font-weight:400;">Passages, doors (locked? trapped?), dead ends</span></div>
+        <div class="flow-arrow"></div>
+        <div class="flow-node info">Check Phase & Objective<br><span style="font-size:0.75rem; font-weight:400;">Early → Late transition, objective availability</span></div>
+        <div class="flow-arrow"></div>
+        <div class="flow-node" style="background:var(--color-dungeon); color:#fff;">Choose an Exit — Continue</div>
+        <div class="flow-arrow"></div>
+        <div class="flow-loop-label">Loop until Objective Complete</div>
+      </div>
+    </div>
+
+  </main>
+
+  <aside class="sidebar" id="sidebar-mount"></aside>
+</div>
+
+<div class="sidebar-overlay"></div>
+<button class="sidebar-mobile-toggle" aria-label="Open toolkit">🧰</button>
+
+<footer class="site-footer">
+  Nimble Solo Companion — built with care for the Nimble RPG community.
+  <a href="http://nimblerpg.com/" target="_blank">nimbleRPG.com</a>
+</footer>
+
+<script src="js/components.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/nav.js"></script>
+</body>
+</html>

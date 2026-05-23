@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wilderness — Nimble Solo Companion</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-title">Nimble Solo</div>
+      <div class="brand-subtitle">Solo Play Companion</div>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="settlement.html">Settlement</a>
+      <a href="quest.html">Quest</a>
+      <a href="wilderness.html">Wilderness</a>
+      <a href="dungeon.html">Dungeon</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<div class="attribution-bar"></div>
+
+<div class="page-layout">
+  <main class="page-content">
+
+    <h1 class="page-title" style="color:var(--color-wilderness);">Wilderness Exploration</h1>
+    <p class="page-subtitle">Travel through the wilds to reach your quest's dungeon. The generator handles the exploration loop — just keep pressing the button.</p>
+
+    <div class="generator-embed">
+      <div class="generator-embed-header">
+        <span class="generator-embed-title">Wilderness Explorer</span>
+        <a href="https://perchance.org/nimble-wilderness-exploration" target="_blank" class="generator-embed-link">Open standalone ↗</a>
+      </div>
+      <iframe src="https://perchance.org/embed/nimble-wilderness-exploration" title="Wilderness Explorer" loading="lazy"></iframe>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">How Wilderness Exploration Works</h2>
+      <div class="rules-section">
+        <p>Wilderness exploration has two phases: <strong>Early</strong> and <strong>Late</strong>. You start in the Early phase and transition to Late after you've traveled far enough (or when the generator tells you).</p>
+
+        <h3>The Exploration Loop</h3>
+        <p>Each step through the wilderness, the generator rolls for what you encounter:</p>
+        <ul>
+          <li><strong>Travel</strong> — uneventful progress toward your destination</li>
+          <li><strong>Feature</strong> — a point of interest (landmark, ruin, natural wonder)</li>
+          <li><strong>Challenge</strong> — a skill test or obstacle to overcome</li>
+          <li><strong>Encounter</strong> — monsters or NPCs to interact with</li>
+          <li><strong>Settlement</strong> — a town or camp along the way</li>
+          <li><strong>Dungeon Found</strong> — you've arrived at your quest destination</li>
+        </ul>
+
+        <h3>Key Rules</h3>
+        <ul>
+          <li><strong>Doubles:</strong> Rolling doubles on the exploration dice triggers a special event and grants <strong>1 Luck point</strong>.</li>
+          <li><strong>Weather:</strong> Changes periodically and can affect travel. Narrate it for atmosphere.</li>
+          <li><strong>Monster Encounters:</strong> When the generator calls for monsters, use the <strong>Monster Encounter</strong> tools in the sidebar.</li>
+          <li><strong>Treasure:</strong> Some encounters and features yield treasure — use the <strong>Treasure</strong> tool in the sidebar.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Wilderness Exploration Flow</h2>
+      <p style="color:var(--text-tertiary); font-size:0.85rem; margin-bottom:1rem;">This diagram shows what's happening under the hood when you use the generator above.</p>
+      <div class="flow-diagram">
+        <div class="flow-node" style="background:var(--color-wilderness); color:#fff;">Begin Journey</div>
+        <div class="flow-arrow"></div>
+        <div class="flow-node" style="background:var(--color-wilderness); color:#fff;">Roll Exploration Dice (2d6)</div>
+        <div class="flow-arrow"></div>
+        <div class="flow-node info">Check Result: Travel / Feature / Challenge / Encounter / Settlement / Dungeon</div>
+        <div class="flow-arrow"></div>
+        <div class="flow-node info">Resolve the Result<br><span style="font-size:0.75rem; font-weight:400;">Play out encounters, narrate features, attempt challenges</span></div>
+        <div class="flow-arrow"></div>
+        <div class="flow-node info">Check for Phase Transition<br><span style="font-size:0.75rem; font-weight:400;">Early → Late based on progress</span></div>
+        <div class="flow-arrow"></div>
+        <div class="flow-node" style="background:var(--color-wilderness); color:#fff;">Continue or Arrive at Dungeon</div>
+        <div class="flow-arrow"></div>
+        <div class="flow-loop-label">Loop until Dungeon Found</div>
+      </div>
+    </div>
+
+  </main>
+
+  <aside class="sidebar" id="sidebar-mount"></aside>
+</div>
+
+<div class="sidebar-overlay"></div>
+<button class="sidebar-mobile-toggle" aria-label="Open toolkit">🧰</button>
+
+<footer class="site-footer">
+  Nimble Solo Companion — built with care for the Nimble RPG community.
+  <a href="http://nimblerpg.com/" target="_blank">nimbleRPG.com</a>
+</footer>
+
+<script src="js/components.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/nav.js"></script>
+</body>
+</html>
