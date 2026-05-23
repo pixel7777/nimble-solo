@@ -90,6 +90,43 @@
     </div>
 
     <div class="card">
+      <h2 class="card-title">The Inner Gameplay Loop</h2>
+      <div class="tool-tips">
+        <p style="margin-bottom:0.75rem;">This is the decision flow happening inside every phase of play. When you need to answer a question, the type of question determines which tool to use. The sidebar tools marked with ✨ are always available.</p>
+      </div>
+      <div style="display:flex; gap:1.5rem; flex-wrap:wrap; justify-content:center;">
+        <div style="flex:1; min-width:250px;">
+          <pre class="mermaid">
+flowchart TD
+    ENV["Envision the Situation"] --> ASK["Ask Questions"]
+    ASK --> ACT["Take Action\nResolve the Outcome"]
+    ASK -. "see detail ➜" .-> ASK2["Ask Questions\n(see right)"]
+    ACT --> PF{"Pass / Fail"}
+    PF -->|Pass| NEXT["What do you do next?"]
+    PF -->|Fail| CONS["Address the Consequence"]
+    CONS --> WHAT["What happens next?"]
+    NEXT --> ENV
+    WHAT --> ENV
+          </pre>
+        </div>
+        <div style="flex:1.5; min-width:350px;">
+          <pre class="mermaid">
+flowchart TD
+    ASK["Ask Questions"] --> KIND{"What kind of question?"}
+    KIND -->|"Can I...?\nDoes this...?\nIs there...?"| ORACLE["Yes / No Oracle\n✨ Sidebar Tool"]
+    KIND -->|"What is...?\nHow does...?\nWhy would...?"| INSP["Inspiration Tables\n✨ Sidebar Tool"]
+    KIND -->|"Do I succeed\nat this task?"| SKILL["Skill Check\n1d20+Mod\nvs 2d6+6 or 13"]
+    ORACLE --> DBL{"Doubles?"}
+    DBL -->|Yes| RE["Random Event\n✨ Sidebar Tool"]
+    INSP --> INTERP["Interpret based\non Context"]
+    SKILL --> FAIL{"Fail?"}
+    FAIL -->|Yes| RC["Roll a Consequence\n✨ Sidebar Tool"]
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
       <h2 class="card-title">Playing Nimble Solo</h2>
       <div class="nimble-rules">
         <ol>
@@ -113,42 +150,6 @@
           <li>Doubles trigger a Random Event</li>
           <li>Only 1 Random Event at a time</li>
         </ul>
-      </div>
-    </div>
-
-    <div class="card">
-      <h2 class="card-title">The Inner Gameplay Loop</h2>
-      <div class="tool-tips">
-        <p style="margin-bottom:0.75rem;">This is the decision flow happening inside every phase of play. When you need to answer a question, the type of question determines which tool to use. The sidebar tools marked with ✨ are always available.</p>
-      </div>
-      <div style="display:flex; gap:1.5rem; flex-wrap:wrap; justify-content:center;">
-        <div style="flex:1; min-width:250px;">
-          <pre class="mermaid">
-flowchart TD
-    ENV["Envision the Situation"] --> ASK["Ask Questions"]
-    ASK --> ACT["Take Action\nResolve the Outcome"]
-    ACT --> PF{"Pass / Fail"}
-    PF -->|Pass| NEXT["What do you do next?"]
-    PF -->|Fail| CONS["Address the Consequence"]
-    CONS --> WHAT["What happens next?"]
-    NEXT --> ENV
-    WHAT --> ENV
-          </pre>
-        </div>
-        <div style="flex:1.5; min-width:350px;">
-          <pre class="mermaid">
-flowchart TD
-    ASK["Ask Questions"] --> KIND{"What kind of question?"}
-    KIND -->|"Can I...?\nDoes this...?\nIs there...?"| ORACLE["Yes / No Oracle\n✨ Sidebar Tool"]
-    KIND -->|"What is...?\nHow does...?\nWhy would...?"| INSP["Inspiration Tables\n✨ Sidebar Tool"]
-    KIND -->|"Do I succeed\nat this task?"| SKILL["Skill Check\n1d20+Mod\nvs 2d6+6 or 13"]
-    ORACLE --> DBL{"Doubles?"}
-    DBL -->|Yes| RE["Random Event\n✨ Sidebar Tool"]
-    INSP --> INTERP["Interpret based\non Context"]
-    SKILL --> FAIL{"Fail?"}
-    FAIL -->|Yes| RC["Roll a Consequence\n✨ Sidebar Tool"]
-          </pre>
-        </div>
       </div>
     </div>
 
