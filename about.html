@@ -9,18 +9,17 @@
 <body>
 
 <header class="site-header">
-  <div class="header-inner">
+  <div class="header-top">
     <div class="brand">
       <div class="brand-title">Nimble Solo</div>
       <div class="brand-subtitle">Solo Play Companion</div>
     </div>
     <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
-    <nav class="main-nav">
+    <nav class="flow-nav">
+      <div class="flow-nav-inner" id="flow-nav-mount"></div>
+    </nav>
+    <nav class="util-nav">
       <a href="index.html">Home</a>
-      <a href="settlement.html">Settlement</a>
-      <a href="quest.html">Quest</a>
-      <a href="wilderness.html">Wilderness</a>
-      <a href="dungeon.html">Dungeon</a>
       <a href="about.html">About</a>
     </nav>
   </div>
@@ -35,31 +34,40 @@
 
     <div class="card">
       <h2 class="card-title">What Is Nimble Solo Companion?</h2>
-      <div class="rules-section">
-        <p>This is a free companion tool for playing the <strong>Nimble RPG</strong> system solo. It takes the decision flows from the Nimble Solo rules and presents them as an interactive, guided experience — with random generators embedded right where you need them.</p>
-        <p>The site answers one question at every moment: <strong>"What do I do next?"</strong></p>
-        <p>It is not a rules replacement. Players should own (or be exploring) the Nimble books. This site provides enough context to play smoothly but doesn't try to reproduce the full rules.</p>
+      <p style="color:var(--text-secondary); margin-bottom:0.75rem;">This is a free companion tool for playing the <strong>Nimble RPG</strong> system solo. It takes the decision flows from the Nimble Solo rules and presents them as an interactive, guided experience — with random generators embedded right where you need them.</p>
+      <p style="color:var(--text-secondary); margin-bottom:0.75rem;">The site answers one question at every moment: <strong>"What do I do next?"</strong></p>
+      <p style="color:var(--text-secondary);">It is not a rules replacement. Players should own (or be exploring) the Nimble books. This site provides enough context to play smoothly but doesn't try to reproduce the full rules.</p>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Draft Rules Notice</h2>
+      <p style="color:var(--text-secondary); margin-bottom:1rem;">The rules content on this site is based on the <strong>Nimble Solo draft rules</strong> (v9). These rules are still in development and may change as the system is refined. When the official rules are finalized, this site will be updated to reflect them.</p>
+      <p style="color:var(--text-secondary); margin-bottom:1rem;">Throughout this site, you'll see two types of content, each with its own visual marker:</p>
+
+      <div class="nimble-rules">
+        <p><strong>Content marked like this</strong> is adapted from the Nimble Solo draft rules PDF. It represents the official game mechanics — exploration phases, room types, quest structure, luck rules, and so on. This content belongs to the Nimble system and its creator.</p>
+      </div>
+
+      <div class="tool-tips">
+        <p><strong>Content marked like this</strong> is Pixel's guidance on how to use this site and its generators. It includes tips on which tools to open, how the generators work, and suggestions for getting the most out of solo play. This is site-specific advice, not official Nimble rules.</p>
       </div>
     </div>
 
     <div class="card">
       <h2 class="card-title">Nimble RPG</h2>
-      <div class="rules-section">
-        <p><strong>Nimble</strong> is a tabletop roleplaying game created by <strong>Emil Andersen</strong>. It's a lightweight, flexible system designed for fast play and creative storytelling.</p>
-        <p>The Nimble Solo supplement provides everything you need to play Nimble adventures by yourself — random generators for quests, wilderness travel, dungeon exploration, and more.</p>
-        <p style="margin-top:0.75rem;">
-          <a href="http://nimblerpg.com/" target="_blank" style="font-weight:600; font-size:1.05rem;">Visit nimbleRPG.com for official Nimble content →</a>
-        </p>
-      </div>
+      <p style="color:var(--text-secondary); margin-bottom:0.5rem;"><strong>Nimble</strong> is a tabletop roleplaying game created by <strong>Emil Andersen</strong>. It's a lightweight, flexible system designed for fast play and creative storytelling.</p>
+      <p style="color:var(--text-secondary); margin-bottom:0.5rem;">The Nimble Solo supplement provides everything you need to play Nimble adventures by yourself — random generators for quests, wilderness travel, dungeon exploration, and more.</p>
+      <p style="margin-top:0.75rem;">
+        <a href="http://nimblerpg.com/" target="_blank" style="font-weight:600; font-size:1.05rem;">Visit nimbleRPG.com for official Nimble content →</a>
+      </p>
     </div>
 
     <div class="card">
       <h2 class="card-title">Credits</h2>
-      <div class="rules-section">
-        <p><strong>Nimble RPG</strong> — created by Emil Andersen. All Nimble content, rules, and tables are the intellectual property of their creator.</p>
-        <p><strong>Perchance Generators</strong> — built by Heidi (Pixel). The generators on this site automate the Nimble Solo rules tables into interactive tools. They are free to use.</p>
-        <p><strong>This Website</strong> — designed and built by Heidi as a companion tool for the Nimble solo play community.</p>
-      </div>
+      <p style="color:var(--text-secondary); margin-bottom:0.5rem;"><strong>Nimble RPG</strong> — created by Emil Andersen. All Nimble content, rules, and tables are the intellectual property of their creator.</p>
+      <p style="color:var(--text-secondary); margin-bottom:0.5rem;"><strong>Perchance Generators</strong> — built by Pixel. The generators on this site automate the Nimble Solo rules tables into interactive tools. They are free to use.</p>
+      <p style="color:var(--text-secondary); margin-bottom:0.5rem;"><strong>This Website</strong> — designed and built by Pixel as a companion tool for the Nimble solo play community.</p>
+      <p style="color:var(--text-secondary);"><strong>Parchment texture:</strong> Photo by <a href="https://unsplash.com/@kiwihug" target="_blank">Kiwihug</a> on <a href="https://unsplash.com/photos/cqhXfrRHCPo" target="_blank">Unsplash</a>. Used under the Unsplash License (free for commercial and non-commercial use, no attribution required, but credited voluntarily).</p>
     </div>
 
     <div class="card">
@@ -78,6 +86,12 @@
         <li><a href="https://perchance.org/nimbleesque-monster-encounters" target="_blank">Monster Encounters (Nimble-esque)</a> — budget-based encounter builder</li>
         <li><a href="https://perchance.org/nimblesque-treasures" target="_blank">Treasure Generator</a> — gold and magic item loot</li>
       </ul>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Questions or Feedback?</h2>
+      <p style="color:var(--text-secondary); margin-bottom:0.5rem;">If you have questions, suggestions, or just want to say hi, you can find me as <strong>@pixel7777</strong> on the <a href="https://discord.com/invite/7xKRkHfDks" target="_blank" style="font-weight:600;">Nimble Discord Server</a>. Tag me in a message and I'll do my best to help.</p>
+      <p style="color:var(--text-secondary); font-size:0.9rem;">Please note: I'm not able to accept friend requests or DMs from people I don't share a server with. The best way to reach me is through the Nimble Discord.</p>
     </div>
 
     <div class="card" style="background:var(--bg-inset); border-color:var(--border-ornament); text-align:center; padding:2rem;">

@@ -9,18 +9,17 @@
 <body>
 
 <header class="site-header">
-  <div class="header-inner">
+  <div class="header-top">
     <div class="brand">
       <div class="brand-title">Nimble Solo</div>
       <div class="brand-subtitle">Solo Play Companion</div>
     </div>
     <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
-    <nav class="main-nav">
+    <nav class="flow-nav">
+      <div class="flow-nav-inner" id="flow-nav-mount"></div>
+    </nav>
+    <nav class="util-nav">
       <a href="index.html">Home</a>
-      <a href="settlement.html">Settlement</a>
-      <a href="quest.html">Quest</a>
-      <a href="wilderness.html">Wilderness</a>
-      <a href="dungeon.html">Dungeon</a>
       <a href="about.html">About</a>
     </nav>
   </div>
@@ -39,52 +38,68 @@
         <span class="generator-embed-title">Wilderness Explorer</span>
         <a href="https://perchance.org/nimble-wilderness-exploration" target="_blank" class="generator-embed-link">Open standalone ↗</a>
       </div>
-      <iframe src="https://perchance.org/embed/nimble-wilderness-exploration" title="Wilderness Explorer" loading="lazy"></iframe>
+      <iframe src="https://null.perchance.org/nimble-wilderness-exploration" title="Wilderness Explorer" loading="lazy"></iframe>
     </div>
 
     <div class="card">
       <h2 class="card-title">How Wilderness Exploration Works</h2>
-      <div class="rules-section">
-        <p>Wilderness exploration has two phases: <strong>Early</strong> and <strong>Late</strong>. You start in the Early phase and transition to Late after you've traveled far enough (or when the generator tells you).</p>
-
-        <h3>The Exploration Loop</h3>
-        <p>Each step through the wilderness, the generator rolls for what you encounter:</p>
+      <div class="tool-tips">
+        <p style="margin-bottom:0.75rem;">The draft rules have a flow chart and rules that show how to generate each area (see the draft rules PDF pinned to the #solo-rules channel of the <a href="https://discord.com/invite/7xKRkHfDks" target="_blank">Nimble Discord server</a> for the illustrated decision flows). The text is displayed below for reference. However, the generator above automates the entire flow. Keep hitting the Explore Next Area button above, and adjudicate as you go.</p>
         <ul>
-          <li><strong>Travel</strong> — uneventful progress toward your destination</li>
-          <li><strong>Feature</strong> — a point of interest (landmark, ruin, natural wonder)</li>
-          <li><strong>Challenge</strong> — a skill test or obstacle to overcome</li>
-          <li><strong>Encounter</strong> — monsters or NPCs to interact with</li>
-          <li><strong>Settlement</strong> — a town or camp along the way</li>
-          <li><strong>Dungeon Found</strong> — you've arrived at your quest destination</li>
-        </ul>
-
-        <h3>Key Rules</h3>
-        <ul>
-          <li><strong>Doubles:</strong> Rolling doubles on the exploration dice triggers a special event and grants <strong>1 Luck point</strong>.</li>
-          <li><strong>Weather:</strong> Changes periodically and can affect travel. Narrate it for atmosphere.</li>
-          <li><strong>Monster Encounters:</strong> When the generator calls for monsters, use the <strong>Monster Encounter</strong> tools in the sidebar.</li>
-          <li><strong>Treasure:</strong> Some encounters and features yield treasure — use the <strong>Treasure</strong> tool in the sidebar.</li>
+          <li>Start with a Grasslands Settlement (go to the <a href="settlement.html">Settlement</a> page to generate it, or make up your own hometown).</li>
+          <li>Optional: treat each area as a hex in a hex crawl and build a world map as you go.</li>
+          <li>Each area has a description and environment and an encounter to adjudicate:
+            <ul>
+              <li><strong>Hazard:</strong> Can be flavor for the area or inspire a challenge (see Creating a Challenge rules below).</li>
+              <li><strong>Weather:</strong> Can be flavor for the area or inspire a challenge (see Creating a Challenge rules below).</li>
+              <li><strong>Immersion:</strong> Imagine the sensations your character is experiencing.</li>
+              <li><strong>Road/River:</strong> Add to your map and/or use for RP/Worldbuilding/Challenge inspiration.</li>
+              <li><strong>Encounter:</strong> Use the <strong>Monster Encounter</strong> tools in the sidebar for random encounter ideas.</li>
+              <li><strong>Challenge:</strong> The generator automatically creates one. Adjudicate per the Creating a Challenge rules below.</li>
+              <li><strong>Feature:</strong> Add to your map and/or use for RP/Worldbuilding/Challenge inspiration.</li>
+              <li><strong>Advance Plot:</strong> Use as a trigger for RP (e.g. What's your villain doing in the background. Maybe they act!) or generate a Random Event &amp; Consequence for inspiration.</li>
+              <li><strong>Destination/Dungeon:</strong> You have arrived! If it's a Settlement, go do settlement stuff. Maybe get a new quest! If it's the Dungeon, go to the dungeon tab and start delving for your objective.</li>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
 
     <div class="card">
-      <h2 class="card-title">Wilderness Exploration Flow</h2>
-      <p style="color:var(--text-tertiary); font-size:0.85rem; margin-bottom:1rem;">This diagram shows what's happening under the hood when you use the generator above.</p>
-      <div class="flow-diagram">
-        <div class="flow-node" style="background:var(--color-wilderness); color:#fff;">Begin Journey</div>
-        <div class="flow-arrow"></div>
-        <div class="flow-node" style="background:var(--color-wilderness); color:#fff;">Roll Exploration Dice (2d6)</div>
-        <div class="flow-arrow"></div>
-        <div class="flow-node info">Check Result: Travel / Feature / Challenge / Encounter / Settlement / Dungeon</div>
-        <div class="flow-arrow"></div>
-        <div class="flow-node info">Resolve the Result<br><span style="font-size:0.75rem; font-weight:400;">Play out encounters, narrate features, attempt challenges</span></div>
-        <div class="flow-arrow"></div>
-        <div class="flow-node info">Check for Phase Transition<br><span style="font-size:0.75rem; font-weight:400;">Early → Late based on progress</span></div>
-        <div class="flow-arrow"></div>
-        <div class="flow-node" style="background:var(--color-wilderness); color:#fff;">Continue or Arrive at Dungeon</div>
-        <div class="flow-arrow"></div>
-        <div class="flow-loop-label">Loop until Dungeon Found</div>
+      <h2 class="card-title">Wilderness Exploration Rules</h2>
+      <div class="nimble-rules">
+        <p>Generate a map one area at a time. Start at the Early Phase.</p>
+        <ul>
+          <li><strong>Initial Area:</strong> Roll Description. Environment is Grassland. Place a Settlement here.</li>
+          <li><strong>Next Area:</strong> Roll 2d10: One for Description and one for Next Environment.</li>
+          <li><strong>Doubles on Next Area:</strong> Transition from Early Phase to Late Phase.</li>
+          <li><strong>Early Phase:</strong> Roll 2d10-take-lowest on Encounter.</li>
+          <li><strong>Late Phase:</strong> Roll 2d10-take-highest on Encounter.</li>
+          <li><strong>Doubles on Encounter:</strong> Incorporate a Random Event.</li>
+          <li><strong>Weather:</strong> Roll 1d4 + Modifier (of Current Environment).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Creating a Challenge</h2>
+      <div class="nimble-rules">
+        <p style="margin-bottom:0.75rem;">Use <strong>[Skill]</strong> to overcome <strong>[Obstacle]</strong> in order to <strong>[Action]</strong> <strong>[Target]</strong>.</p>
+        <ul>
+          <li>Imagine the situation using the existing context.</li>
+          <li>Perform a Skill Check to overcome the obstacle. Choose or roll a Skill.</li>
+          <li>DC: 2d6+6 or static 13.</li>
+          <li>You have two tries, and must use two different skills.</li>
+          <li>Fail both: suffer a Consequence.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Immersion</h2>
+      <div class="nimble-rules">
+        <p style="margin-bottom:0.75rem;">You <strong>[Sense]</strong> something <strong>[Description]</strong> <strong>[Location]</strong> and it causes <strong>[Emotion]</strong> because <strong>[Reason]</strong>.</p>
+        <p>Imagine the sensations your character is experiencing. Exploration Encounters will prompt you to roll on this table.</p>
       </div>
     </div>
 

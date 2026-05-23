@@ -5,22 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nimble Solo Companion</title>
   <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        primaryColor: '#f5e6c8',
+        primaryTextColor: '#2c1810',
+        primaryBorderColor: '#8b7355',
+        lineColor: '#6b4d8a',
+        secondaryColor: '#ede0cc',
+        tertiaryColor: '#e8d5b0',
+        fontFamily: 'Inter, sans-serif',
+        fontSize: '14px'
+      },
+      flowchart: {
+        curve: 'basis',
+        padding: 12,
+        nodeSpacing: 30,
+        rankSpacing: 40
+      }
+    });
+  </script>
 </head>
 <body>
 
 <header class="site-header">
-  <div class="header-inner">
+  <div class="header-top">
     <div class="brand">
       <div class="brand-title">Nimble Solo</div>
       <div class="brand-subtitle">Solo Play Companion</div>
     </div>
     <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
-    <nav class="main-nav">
+    <nav class="flow-nav">
+      <div class="flow-nav-inner" id="flow-nav-mount"></div>
+    </nav>
+    <nav class="util-nav">
       <a href="index.html">Home</a>
-      <a href="settlement.html">Settlement</a>
-      <a href="quest.html">Quest</a>
-      <a href="wilderness.html">Wilderness</a>
-      <a href="dungeon.html">Dungeon</a>
       <a href="about.html">About</a>
     </nav>
   </div>
@@ -68,54 +90,90 @@
     </div>
 
     <div class="card">
-      <h2 class="card-title">General Tips for Solo Play</h2>
-
-      <div class="tip-item">
-        <span class="tip-icon">📜</span>
-        <div class="tip-content">
-          <strong>Guidelines, not rules.</strong> The tables and generators are tools to spark your imagination. Override any result that doesn't fit your story.
-        </div>
+      <h2 class="card-title">The Inner Gameplay Loop</h2>
+      <div class="tool-tips">
+        <p style="margin-bottom:0.75rem;">This is the decision flow happening inside every phase of play. When you need to answer a question, the type of question determines which tool to use. The sidebar tools marked with ✨ are always available.</p>
       </div>
-
-      <div class="tip-item">
-        <span class="tip-icon">🎭</span>
-        <div class="tip-content">
-          <strong>Be your character.</strong> React to the world as your character would. Let their personality shape which hooks you follow and which you ignore.
+      <div style="display:flex; gap:1.5rem; flex-wrap:wrap; justify-content:center;">
+        <div style="flex:1; min-width:250px;">
+          <pre class="mermaid">
+flowchart TD
+    ENV["Envision the Situation"] --> ASK["Ask Questions"]
+    ASK --> ACT["Take Action\nResolve the Outcome"]
+    ASK -. "see detail ➜" .-> ASK2["Ask Questions\n(see right)"]
+    ACT --> PF{"Pass / Fail"}
+    PF -->|Pass| NEXT["What do you do next?"]
+    PF -->|Fail| CONS["Address the Consequence"]
+    CONS --> WHAT["What happens next?"]
+    NEXT --> ENV
+    WHAT --> ENV
+          </pre>
         </div>
-      </div>
-
-      <div class="tip-item">
-        <span class="tip-icon">⚡</span>
-        <div class="tip-content">
-          <strong>Keep the flow moving.</strong> Don't agonize over every roll. If a result doesn't make sense, reroll or interpret creatively and move on.
-        </div>
-      </div>
-
-      <div class="tip-item">
-        <span class="tip-icon">🔄</span>
-        <div class="tip-content">
-          <strong>Fail forward.</strong> When things go wrong, let the complications drive the story. A failed check isn't the end — it's a twist.
-        </div>
-      </div>
-
-      <div class="tip-item">
-        <span class="tip-icon">📝</span>
-        <div class="tip-content">
-          <strong>Take notes.</strong> Jot down NPC names, settlement details, and quest threads. Your notes become the world's memory.
-        </div>
-      </div>
-
-      <div class="tip-item">
-        <span class="tip-icon">🎲</span>
-        <div class="tip-content">
-          <strong>Use the Oracle.</strong> When you're not sure what happens next, ask the Oracle a yes/no question. It's always available in the sidebar.
+        <div style="flex:1.5; min-width:350px;">
+          <pre class="mermaid">
+flowchart TD
+    ASK["Ask Questions"] --> KIND{"What kind of question?"}
+    KIND -->|"Can I...?\nDoes this...?\nIs there...?"| ORACLE["Yes / No Oracle\n✨ Sidebar Tool"]
+    KIND -->|"What is...?\nHow does...?\nWhy would...?"| INSP["Inspiration Tables\n✨ Sidebar Tool"]
+    KIND -->|"Do I succeed\nat this task?"| SKILL["Skill Check\n1d20+Mod\nvs 2d6+6 or 13"]
+    ORACLE --> DBL{"Doubles?"}
+    DBL -->|Yes| RE["Random Event\n✨ Sidebar Tool"]
+    INSP --> INTERP["Interpret based\non Context"]
+    SKILL --> FAIL{"Fail?"}
+    FAIL -->|Yes| RC["Roll a Consequence\n✨ Sidebar Tool"]
+          </pre>
         </div>
       </div>
     </div>
 
     <div class="card">
+      <h2 class="card-title">Playing Nimble Solo</h2>
+      <div class="nimble-rules">
+        <ol>
+          <li>Create a Main Hero and a Sidekick Hero. Each can have a Companion if desired.</li>
+          <li>Build a Quest.</li>
+          <li>Use the Yes / No Oracle and provided tables to answer questions.</li>
+          <li>Imagine the scene and resolve the situation.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Yes / No Oracle</h2>
+      <div class="nimble-rules">
+        <p style="margin-bottom:0.75rem;">Use this to answer any Yes / No questions you may have.</p>
+        <ul>
+          <li>Roll 2d6</li>
+          <li>Equal Odds: Read Primary (Left) Die</li>
+          <li>Likely Odds: Read Highest Die</li>
+          <li>Unlikely Odds: Read Lowest Die</li>
+          <li>Doubles trigger a Random Event</li>
+          <li>Only 1 Random Event at a time</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">General Tips for Solo Play</h2>
+
+      <div class="nimble-rules">
+        <ul>
+          <li>Guidelines, not rules. There is no wrong way to play. Choose what is most fun.</li>
+          <li>Keep the flow moving. If something doesn't make sense, reroll, or choose a row.</li>
+          <li>Defer some questions for later; Answers may naturally come to you as you play.</li>
+          <li>Fail-forward: Every failure is a new opportunity and a new challenge to overcome.</li>
+          <li>Be your character. Describe the situation, how your character handles it, and why.</li>
+          <li>Your actions have consequences and should change the world in a meaningful way.</li>
+          <li>Create your own themed 1d10 lists on index cards to customize your adventure.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
       <h2 class="card-title">Luck</h2>
-      <p style="margin-bottom:0.75rem; color:var(--text-secondary);">Luck points let you bend fate when it matters most. Characters start with 3 Luck and gain 1 whenever they roll doubles during exploration.</p>
+      <div class="nimble-rules">
+        <p style="margin-bottom:0.75rem;">+1 Luck on a miss or failed save. Max 5. Earning a 6th resets to 1d4. Reset to 0 on rest.</p>
+      </div>
       <table style="width:100%; border-collapse:collapse;">
         <thead>
           <tr>
@@ -124,11 +182,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td style="padding:0.35rem 0.6rem; border:1px solid var(--border-panel);">1 Luck</td><td style="padding:0.35rem 0.6rem; border:1px solid var(--border-panel);">Reroll any single die</td></tr>
-          <tr><td style="padding:0.35rem 0.6rem; border:1px solid var(--border-panel);">1 Luck</td><td style="padding:0.35rem 0.6rem; border:1px solid var(--border-panel);">Add or remove a detail from the scene</td></tr>
-          <tr><td style="padding:0.35rem 0.6rem; border:1px solid var(--border-panel);">2 Luck</td><td style="padding:0.35rem 0.6rem; border:1px solid var(--border-panel);">Auto-succeed a check (no roll needed)</td></tr>
-          <tr><td style="padding:0.35rem 0.6rem; border:1px solid var(--border-panel);">2 Luck</td><td style="padding:0.35rem 0.6rem; border:1px solid var(--border-panel);">Escape a deadly situation</td></tr>
-          <tr><td style="padding:0.35rem 0.6rem; border:1px solid var(--border-panel);">3 Luck</td><td style="padding:0.35rem 0.6rem; border:1px solid var(--border-panel);">Introduce a major narrative twist in your favor</td></tr>
+          <tr><td style="padding:0.35rem 0.6rem; border:1px solid var(--border-panel);">1</td><td style="padding:0.35rem 0.6rem; border:1px solid var(--border-panel);">Companion: +1 Extra Action</td></tr>
+          <tr><td style="padding:0.35rem 0.6rem; border:1px solid var(--border-panel);">2</td><td style="padding:0.35rem 0.6rem; border:1px solid var(--border-panel);">Hero: +1 Extra Action</td></tr>
+          <tr><td style="padding:0.35rem 0.6rem; border:1px solid var(--border-panel);">3</td><td style="padding:0.35rem 0.6rem; border:1px solid var(--border-panel);">Reroll any d20</td></tr>
+          <tr><td style="padding:0.35rem 0.6rem; border:1px solid var(--border-panel);">4</td><td style="padding:0.35rem 0.6rem; border:1px solid var(--border-panel);">Turn any hit into a crit</td></tr>
+          <tr><td style="padding:0.35rem 0.6rem; border:1px solid var(--border-panel);">5</td><td style="padding:0.35rem 0.6rem; border:1px solid var(--border-panel);">Recover 1 Hit Die</td></tr>
         </tbody>
       </table>
     </div>

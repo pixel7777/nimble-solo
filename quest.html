@@ -9,18 +9,17 @@
 <body>
 
 <header class="site-header">
-  <div class="header-inner">
+  <div class="header-top">
     <div class="brand">
       <div class="brand-title">Nimble Solo</div>
       <div class="brand-subtitle">Solo Play Companion</div>
     </div>
     <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
-    <nav class="main-nav">
+    <nav class="flow-nav">
+      <div class="flow-nav-inner" id="flow-nav-mount"></div>
+    </nav>
+    <nav class="util-nav">
       <a href="index.html">Home</a>
-      <a href="settlement.html">Settlement</a>
-      <a href="quest.html">Quest</a>
-      <a href="wilderness.html">Wilderness</a>
-      <a href="dungeon.html">Dungeon</a>
       <a href="about.html">About</a>
     </nav>
   </div>
@@ -34,28 +33,30 @@
     <h1 class="page-title" style="color:var(--color-quest);">Quest</h1>
     <p class="page-subtitle">Every adventure needs a reason. Build a quest that gives your party direction and purpose.</p>
 
-    <div class="card">
-      <h2 class="card-title">The Quest Sentence</h2>
-      <div class="rules-section">
-        <p>Nimble quests follow a template that generates a complete adventure hook in one sentence:</p>
-        <div class="card" style="background:var(--bg-inset); margin:0.75rem 0; padding:1rem; font-style:italic; font-size:1.05rem; line-height:1.7; border-color:var(--border-ornament);">
-          A <strong>[Situation]</strong> <strong>[Person]</strong>, concerned about <strong>[Motive]</strong>, asks you to <strong>[Objective]</strong> the <strong>[Description]</strong> <strong>[Focus]</strong> in the <strong>[Dungeon]</strong> of <strong>[Adjective]</strong> <strong>[Noun]</strong>, <strong>[Complication]</strong>.
-        </div>
-        <p>The generator below rolls all of these elements and assembles them into a ready-to-play quest. Reroll if the combination doesn't inspire you — or keep parts you like and reroll the rest.</p>
-      </div>
-    </div>
-
     <div class="generator-embed">
       <div class="generator-embed-header">
         <span class="generator-embed-title">Quest Builder</span>
         <a href="https://perchance.org/nimble-quests" target="_blank" class="generator-embed-link">Open standalone ↗</a>
       </div>
-      <iframe src="https://perchance.org/embed/nimble-quests" title="Quest Builder" loading="lazy"></iframe>
+      <iframe src="https://null.perchance.org/nimble-quests" title="Quest Builder" loading="lazy"></iframe>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">The Quest Sentence</h2>
+      <div class="nimble-rules">
+        <p style="margin-bottom:0.5rem;"><strong>What is your Quest?</strong></p>
+        <div class="card" style="background:var(--bg-inset); margin:0.75rem 0; padding:1rem; font-style:italic; font-size:1.05rem; line-height:1.7; border-color:var(--border-ornament);">
+          A <strong>[Situation]</strong> <strong>[Person]</strong>, concerned about <strong>[Motive]</strong>, asks you to <strong>[Objective]</strong> the <strong>[Description]</strong> <strong>[Focus]</strong> in the <strong>[Dungeon]</strong> of <strong>[Adjective]</strong> <strong>[Noun]</strong>, <strong>[Complication]</strong>.
+        </div>
+      </div>
+      <div class="tool-tips">
+        <p>The generator above rolls all of these elements and assembles them into a ready-to-play quest. Reroll if the combination doesn't inspire you — or keep parts you like and reroll the rest.</p>
+      </div>
     </div>
 
     <div class="card">
       <h2 class="card-title">Quest Tips</h2>
-      <div class="rules-section">
+      <div class="tool-tips">
         <ul>
           <li>The quest gives you a <strong>dungeon name</strong> and an <strong>objective</strong>. These define where you're going and what you need to do there.</li>
           <li>The <strong>complication</strong> is what makes the quest interesting — it's the twist, the constraint, the thing that makes it more than a simple fetch job.</li>

@@ -9,18 +9,17 @@
 <body>
 
 <header class="site-header">
-  <div class="header-inner">
+  <div class="header-top">
     <div class="brand">
       <div class="brand-title">Nimble Solo</div>
       <div class="brand-subtitle">Solo Play Companion</div>
     </div>
     <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
-    <nav class="main-nav">
+    <nav class="flow-nav">
+      <div class="flow-nav-inner" id="flow-nav-mount"></div>
+    </nav>
+    <nav class="util-nav">
       <a href="index.html">Home</a>
-      <a href="settlement.html">Settlement</a>
-      <a href="quest.html">Quest</a>
-      <a href="wilderness.html">Wilderness</a>
-      <a href="dungeon.html">Dungeon</a>
       <a href="about.html">About</a>
     </nav>
   </div>
@@ -39,61 +38,73 @@
         <span class="generator-embed-title">Dungeon Explorer</span>
         <a href="https://perchance.org/nimble-dungeon-exploration" target="_blank" class="generator-embed-link">Open standalone ↗</a>
       </div>
-      <iframe src="https://perchance.org/embed/nimble-dungeon-exploration" title="Dungeon Explorer" loading="lazy"></iframe>
+      <iframe src="https://null.perchance.org/nimble-dungeon-exploration" title="Dungeon Explorer" loading="lazy"></iframe>
     </div>
 
     <div class="card">
       <h2 class="card-title">How Dungeon Exploration Works</h2>
-      <div class="rules-section">
-        <p>Like the wilderness, dungeon exploration has <strong>Early</strong> and <strong>Late</strong> phases. You explore rooms one at a time until you find and complete your quest objective.</p>
-
-        <h3>Room Types</h3>
+      <div class="tool-tips">
+        <p style="margin-bottom:0.75rem;">The draft rules have a flow chart and rules that show how to generate each area (see the draft rules PDF pinned to the #solo-rules channel of the <a href="https://discord.com/invite/7xKRkHfDks" target="_blank">Nimble Discord server</a> for the illustrated decision flows). The text is displayed below for reference. However, the generator above automates the entire flow. Keep hitting the Explore Next Area button above, and adjudicate as you go.</p>
         <ul>
-          <li><strong>Empty Room</strong> — nothing immediately dangerous, but might contain clues or atmosphere</li>
-          <li><strong>Feature Room</strong> — a notable dungeon feature (altar, fountain, collapsed section, etc.)</li>
-          <li><strong>Challenge Room</strong> — a skill test, puzzle, or trap to overcome</li>
-          <li><strong>Monster Room</strong> — creatures to fight or negotiate with</li>
-          <li><strong>Treasure Room</strong> — loot! Use the Treasure tool in the sidebar</li>
-          <li><strong>Objective Room</strong> — your quest target is here. Complete it to finish the dungeon.</li>
-        </ul>
-
-        <h3>Passages and Doors</h3>
-        <ul>
-          <li>After each room, the generator determines how many <strong>exits</strong> you find — passages, doors, or dead ends.</li>
-          <li><strong>Locked doors</strong> require a key (found elsewhere in the dungeon) or a skill check to force open.</li>
-          <li><strong>Trapped doors</strong> can hurt you if you don't detect and disarm them first.</li>
-        </ul>
-
-        <h3>Key Rules</h3>
-        <ul>
-          <li><strong>Doubles:</strong> Same as wilderness — special event + 1 Luck point.</li>
-          <li><strong>Lingering:</strong> If you spend too long in an area you've already explored, you risk a lingering encounter.</li>
-          <li><strong>Backtracking:</strong> Returning through cleared rooms is safe, but lingering encounter rules still apply.</li>
-          <li><strong>Monster Encounters:</strong> Use the <strong>Monster Encounter</strong> tools in the sidebar when the generator calls for combat.</li>
-          <li><strong>Objective:</strong> Completing the objective in the Late phase means you can leave the dungeon and return to your settlement.</li>
+          <li><strong>Chambers:</strong> Draw on your map and then adjudicate per the room type.
+            <ul>
+              <li><strong>Hazard:</strong> Can be flavor for the room or inspire a challenge (see Creating a Challenge rules below).</li>
+              <li><strong>Encounter:</strong> Use the <strong>Monster Encounter</strong> tools in the sidebar for random encounter ideas.</li>
+              <li><strong>Treasure:</strong> Use the <strong>Treasure</strong> tool in the sidebar when you find loot or make something flavorful up.</li>
+              <li><strong>Locked Door:</strong> Use a key or create a challenge to pick the lock, break the door down, or explore another solution. Or mark as locked on your map and explore a different direction.</li>
+              <li><strong>Safety:</strong> Indicate on your map that the room can be used to rest without rolling to Linger longer.</li>
+              <li><strong>Immersion:</strong> Imagine the sensations your character is experiencing.</li>
+              <li><strong>Key:</strong> Add to your inventory (see key rules below).</li>
+              <li><strong>Trap:</strong> You see the trap. Create a challenge to disarm or trigger the trap (see Creating a Challenge rules below). Or mark the trap on your map and explore a different direction.</li>
+              <li><strong>Challenge:</strong> The generator automatically creates one. Adjudicate per the Creating a Challenge rules below.</li>
+              <li><strong>Objective:</strong> You found what you were questing for. Continue exploring or start backtracking your way out of the dungeon using your map and the Backtrack button.</li>
+            </ul>
+          </li>
+          <li><strong>Passage/Secret Exit/Stairs/Connection to Previous Area:</strong> Draw on your map.</li>
+          <li>Use the <strong>Linger</strong> or <strong>Backtrack</strong> buttons to determine if you get an encounter by hanging around in unsafe rooms or backtracking through previously explored ones. If you get one, use the <strong>Monster Encounter</strong> tools in the sidebar for random encounter ideas.</li>
         </ul>
       </div>
     </div>
 
     <div class="card">
-      <h2 class="card-title">Dungeon Exploration Flow</h2>
-      <p style="color:var(--text-tertiary); font-size:0.85rem; margin-bottom:1rem;">This diagram shows the exploration loop the generator automates.</p>
-      <div class="flow-diagram">
-        <div class="flow-node" style="background:var(--color-dungeon); color:#fff;">Enter the Dungeon</div>
-        <div class="flow-arrow"></div>
-        <div class="flow-node" style="background:var(--color-dungeon); color:#fff;">Roll Exploration Dice (2d6)</div>
-        <div class="flow-arrow"></div>
-        <div class="flow-node info">Determine Room Type<br><span style="font-size:0.75rem; font-weight:400;">Empty / Feature / Challenge / Monster / Treasure / Objective</span></div>
-        <div class="flow-arrow"></div>
-        <div class="flow-node info">Resolve the Room<br><span style="font-size:0.75rem; font-weight:400;">Fight, loot, solve, or explore</span></div>
-        <div class="flow-arrow"></div>
-        <div class="flow-node info">Determine Exits<br><span style="font-size:0.75rem; font-weight:400;">Passages, doors (locked? trapped?), dead ends</span></div>
-        <div class="flow-arrow"></div>
-        <div class="flow-node info">Check Phase & Objective<br><span style="font-size:0.75rem; font-weight:400;">Early → Late transition, objective availability</span></div>
-        <div class="flow-arrow"></div>
-        <div class="flow-node" style="background:var(--color-dungeon); color:#fff;">Choose an Exit — Continue</div>
-        <div class="flow-arrow"></div>
-        <div class="flow-loop-label">Loop until Objective Complete</div>
+      <h2 class="card-title">Dungeon Exploration Rules</h2>
+      <div class="nimble-rules">
+        <p>Generate a map as you, exploring one area at a time. Start at the Early Phase.</p>
+        <ul>
+          <li><strong>Early Phase:</strong> Roll 2d10-take-lowest on Next Area and Encounter.</li>
+          <li><strong>Late Phase:</strong> Roll 2d10-take-highest on Next Area and Encounter.</li>
+          <li><strong>Doubles on Next Area:</strong> Transition from Early Phase to Late Phase.</li>
+          <li><strong>Doubles on Encounter:</strong> Incorporate a Random Event.</li>
+          <li><strong>Character Actions</strong> in a room take 10 minutes.</li>
+          <li><strong>Linger longer:</strong> Roll another Encounter, ignoring 5+.</li>
+          <li><strong>Backtracking</strong> or reentering a known room: Roll another Encounter, ignoring 5+.</li>
+          <li><strong>Entrance:</strong> The starting area has 3 doors.</li>
+          <li><strong>Objective:</strong> Only one objective per map. If not rolled, the last reachable area is the objective.</li>
+          <li><strong>Keys:</strong> One use only. Can unlock any door.</li>
+          <li><strong>Traps:</strong> You see the trap. Disarm, trigger, or turn around and find another way.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Creating a Challenge</h2>
+      <div class="nimble-rules">
+        <p style="margin-bottom:0.75rem;">Use <strong>[Skill]</strong> to overcome <strong>[Obstacle]</strong> in order to <strong>[Action]</strong> <strong>[Target]</strong>.</p>
+        <ul>
+          <li>Imagine the situation using the existing context.</li>
+          <li>Perform a Skill Check to overcome the obstacle. Choose or roll a Skill.</li>
+          <li>DC: 2d6+6 or static 13.</li>
+          <li>You have two tries, and must use two different skills.</li>
+          <li>Fail both: suffer a Consequence.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Immersion</h2>
+      <div class="nimble-rules">
+        <p style="margin-bottom:0.75rem;">You <strong>[Sense]</strong> something <strong>[Description]</strong> <strong>[Location]</strong> and it causes <strong>[Emotion]</strong> because <strong>[Reason]</strong>.</p>
+        <p>Imagine the sensations your character is experiencing. Exploration Encounters will prompt you to roll on this table.</p>
       </div>
     </div>
 
