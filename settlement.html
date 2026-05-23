@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settlement — Nimble Solo Companion</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-title">Nimble Solo</div>
+      <div class="brand-subtitle">Solo Play Companion</div>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="settlement.html">Settlement</a>
+      <a href="quest.html">Quest</a>
+      <a href="wilderness.html">Wilderness</a>
+      <a href="dungeon.html">Dungeon</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<div class="attribution-bar"></div>
+
+<div class="page-layout">
+  <main class="page-content">
+
+    <h1 class="page-title" style="color:var(--color-settlement);">Settlement</h1>
+    <p class="page-subtitle">Create a home base for your adventurers. Roll up establishments, news, and NPCs to bring the settlement to life.</p>
+
+    <div class="card">
+      <h2 class="card-title">How Settlements Work</h2>
+      <div class="rules-section">
+        <p>When you arrive at a new settlement (or create your starting town), roll <strong>1d6</strong> to determine how many establishments it has. Each establishment is a place your characters can visit — a tavern, a temple, a market stall, a guild hall.</p>
+        <p>Use the generator below to build settlements quickly. It rolls the establishments, generates names, and gives you settlement news — rumors and events that can seed quests or flavor.</p>
+        <p>You can also name your settlement using the <strong>Name Generator</strong> in the sidebar.</p>
+      </div>
+    </div>
+
+    <div class="card-subtitle">Choose a generator variant</div>
+
+    <div class="generator-tabs">
+      <button class="generator-tab active" data-tab="official">Nimble Official</button>
+      <button class="generator-tab" data-tab="pixel">Pixel's Nimble-esque</button>
+    </div>
+
+    <div class="generator-tab-content active" data-tab="official">
+      <div class="generator-embed">
+        <div class="generator-embed-header">
+          <span class="generator-embed-title">Nimble Settlement Generator</span>
+          <a href="https://perchance.org/nimble-settlements" target="_blank" class="generator-embed-link">Open standalone ↗</a>
+        </div>
+        <iframe src="https://perchance.org/embed/nimble-settlements" title="Nimble Settlement Generator" loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div class="generator-tab-content" data-tab="pixel">
+      <div class="generator-embed">
+        <div class="generator-embed-header">
+          <span class="generator-embed-title">Nimble-esque Settlement Generator</span>
+          <a href="https://perchance.org/nimbleesque-settlements" target="_blank" class="generator-embed-link">Open standalone ↗</a>
+        </div>
+        <iframe src="https://perchance.org/embed/nimbleesque-settlements" title="Nimble-esque Settlement Generator" loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Settlement Tips</h2>
+      <div class="rules-section">
+        <ul>
+          <li>Revisit your settlement between adventures. Roll new <strong>Settlement News</strong> each time you return — the town evolves while you're away.</li>
+          <li>Keep a list of NPCs you meet. The <strong>NPC Dialogue</strong> tool in the sidebar helps when you need a conversation.</li>
+          <li>Not every establishment needs to be visited. Some exist as background — a blacksmith you might need later, a temple you haven't entered yet.</li>
+          <li>When you're ready to adventure, head to the <a href="quest.html">Quest</a> page to find your next objective.</li>
+        </ul>
+      </div>
+    </div>
+
+  </main>
+
+  <aside class="sidebar" id="sidebar-mount"></aside>
+</div>
+
+<div class="sidebar-overlay"></div>
+<button class="sidebar-mobile-toggle" aria-label="Open toolkit">🧰</button>
+
+<footer class="site-footer">
+  Nimble Solo Companion — built with care for the Nimble RPG community.
+  <a href="http://nimblerpg.com/" target="_blank">nimbleRPG.com</a>
+</footer>
+
+<script src="js/components.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/nav.js"></script>
+<script>
+  document.querySelectorAll('.generator-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.tab;
+      document.querySelectorAll('.generator-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.generator-tab-content').forEach(c => c.classList.remove('active'));
+      tab.classList.add('active');
+      document.querySelector(`.generator-tab-content[data-tab="${target}"]`).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
