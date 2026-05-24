@@ -118,6 +118,15 @@ a:hover { color: var(--accent-nav-hover); text-decoration: underline; }
   background: var(--accent-nav);
 }
 
+.util-nav .support-link {
+  color: #e8b84b;
+}
+
+.util-nav .support-link:hover {
+  color: #f5d078;
+  background: rgba(232,184,75,0.15);
+}
+
 .nav-toggle {
   display: none;
   background: none;
@@ -720,6 +729,17 @@ a:hover { color: var(--accent-nav-hover); text-decoration: underline; }
 }
 
 .about-link-list li:last-child { border-bottom: none; }
+
+/* ── CREATOR ATTRIBUTION ── */
+.creator-attribution {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-subtle);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  font-style: italic;
+}
 
 /* ── FOOTER ── */
 .site-footer {
