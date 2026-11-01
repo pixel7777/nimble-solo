@@ -4,7 +4,7 @@
     {
       "name": "nimble-solo",
       "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "8080", "--directory", "C:\\Users\\hjjug\\OneDrive\\Documents\\Claude OS\\nimble-solo"],
+      "runtimeArgs": ["-m", "http.server", "8080", "--directory", "C:\\Users\\hjjug\\Code\\nimble-solo"],
       "port": 8080
     }
   ]
